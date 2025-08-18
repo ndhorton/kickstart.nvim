@@ -163,6 +163,9 @@ vim.opt.confirm = true
 
 vim.opt.expandtab = true
 
+-- Ensure filetype detection is enabled
+-- vim.filetype.add { enable = true }
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -668,6 +671,9 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         ruby_lsp = {},
+        html = {},
+        ts_ls = {},
+        cssls = {},
         -- rubocop = {},
         -- gopls = {},
         -- pyright = {},
@@ -767,6 +773,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        html = { 'htmlbeautifier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -962,7 +969,24 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'ruby', 'cpp' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'ruby',
+        'cpp',
+        'css',
+        'javascript',
+        'typescript',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
