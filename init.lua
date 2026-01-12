@@ -675,6 +675,7 @@ require('lazy').setup({
         html = {},
         ts_ls = {},
         cssls = {},
+        pylsp = {},
         -- rubocop = {},
         -- gopls = {},
         -- pyright = {},
@@ -775,8 +776,9 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         html = { 'htmlbeautifier' },
-        ruby = { 'standardrb' },
-        eruby = { 'erb-formatter' },
+        json = { 'fixjson' },
+        python = { 'docformatter' },
+        eruby = { 'htmlbeautifier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
